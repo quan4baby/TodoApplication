@@ -15,7 +15,7 @@ SQLiteOpenHelper(context, DATABASE_NAME, cursorFactory, DATABASE_VERSION){
     override fun onCreate(db: SQLiteDatabase) {
         // define create statement for todo table
         val query = "CREATE_TABLE " + TABLE_TODO_LIST + "(" +
-                COLUMN_TODO_ID + " INTERGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_TODO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_TODO_ISCHECKED + " TEXT, " +
                 COLUMN_TODO_NAME + " TEXT);"
 
