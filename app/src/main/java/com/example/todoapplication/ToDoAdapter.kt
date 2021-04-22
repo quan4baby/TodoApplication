@@ -88,5 +88,22 @@ class ToDoAdapter(
         notifyDataSetChanged()
     }
 
-
+    /**
+     * This method gets called when the delete button is clicked in the
+     * MainActivity.
+     * @param dbHandler reference to DBHandler
+     */
+    fun deleteTodos(dbHandler: DBHandler){
+        // iterate through the MutableList of Todos
+        todos.forEach {
+            // check if the current Todo's isChecked is equal to true
+            if(it.isChecked){
+                // ask Kotlin to check if the dbHandler isn't null
+                // if it isn't null, call it's deleteToDo method
+                // pass the current Todo's database id
+                dbHandler?.deleteToDo(it.id)
+            }
+        }
+        notifyDataSetChanged()
+    }
 }
